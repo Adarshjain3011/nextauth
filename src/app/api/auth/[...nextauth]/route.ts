@@ -10,9 +10,12 @@ const handler = NextAuth({
             name: "Credentials",
             credentials: {
                 username: { label: "Username", type: "text", placeholder: "Enter your username" },
-                password: { label: "password", type: "text", placeholder: "Enter your password"},
+                password: { label: "password", type: "password", placeholder: "Enter your password"},
                 },
             async authorize(credentials:any) {
+
+
+                console.log(credentials);
 
                 return {
 
@@ -20,8 +23,16 @@ const handler = NextAuth({
                 }
             }
         })
-    ]
+    ],
+    secret:process.env.NEXTAUTH_SECRET
 })
+
+
+
+export const GET = handler;
+
+export const POST = handler;
+
 
 
 
