@@ -1,9 +1,11 @@
 
 import {getServerSession} from "next-auth";
 
-export default async function (){
+// import { NEXT_AUTH_CONFIG } from "../lib/auth";
 
-    const session = await getServerSession();
+export default async function User(){
+
+    const session = await getServerSession();   // 
 
     return (
 
